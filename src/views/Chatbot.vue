@@ -1,0 +1,111 @@
+<template>
+  <div class="about">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <Alerts/>
+    <Header/>
+    <div class = "PromptBox">
+      <div class= "textcontainer">
+      <p class= "prompttext">Type Hello...</p>
+      </div>
+      <img src = "@/assets/bird.png" class="bird">
+    </div>
+    <div class = "yellowstar">yellowStar has entered the chat</div>
+      <amplify-chatbot :chatbotConfig="chatbotConfig"></amplify-chatbot>
+
+  </div>
+</template>
+
+<script>
+import{Interactions} from 'aws-amplify';
+import Header from "@/components/Header.vue";
+import Alerts from "@/components/alerts.vue";
+
+export default{
+  //components: { Header },
+  //Alerts,
+  name: 'App',
+  components:{
+    Alerts,
+    Header
+  },
+  data: () => ({
+    chatbotConfig: {
+      bot: "BookTrip_dev",
+      clearComplete: false
+    }
+  }),
+  mounted() {
+    Interactions.onComplete("BookTrip_dev", this.handleComplete);
+  },
+  methods: {
+    handleComplete(err){//confirmation) {
+      if(err){
+        alert(err);
+        return;
+      }
+      //alert(JSON.stringify(confirmation));
+    }
+  }
+}
+</script>
+<style scoped lang="scss">
+@import "@/global-styles/colors.scss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+*{  padding: 0;
+  margin: 0;
+}
+
+.PromptBox{
+  margin-top: -50px;
+  width: 100%;
+  display: flex;
+  
+  //grid-template-columns: repeat(auto-fit,minmax(150px,1fr) );
+  //grid-gap: 10em;
+
+  height: 100px;
+  //background: green;
+  box-shadow: 0px 2px 43px 1px rgba(199, 185, 255, 0.41);
+}
+.textcontainer{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(150px,1fr) );
+  width: 63%;
+  //background: blue;
+
+
+}
+.prompttext{
+display: grid;
+grid-template-columns: repeat(auto-fit,minmax(150px,1fr) );font-family: 'Nunito Sans', sans-serif;
+font-style: normal;
+font-weight: bold;
+font-size: 40px;
+color: black;
+margin-top: 30px;
+text-align: center;
+//text-indent: 200px;
+}
+
+.bird{
+
+}
+.yellowstar{
+  margin-top: 10px;
+  text-align: center;
+  font-family: Helvetica Neue;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+
+  color: #7C7C7C;
+
+  opacity: 0.7;
+}
+</style>
