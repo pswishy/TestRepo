@@ -20,7 +20,7 @@
                         <div class="content">
                             <h2>welcome back, yellowstar3!</h2>
                             <h4>start typing for evexia can notice you!</h4>
-                            <router-link to = "/chatbot"><div class="inputBox">
+                            <router-link to = "/userprofile"><div class="inputBox">
                                 <input type="submit" value="next" class="btn">
                             </div></router-link>
                         </div>
@@ -30,9 +30,9 @@
                     </div>
                     <p class="social-text">Or sign in with: </p>
                     <div class="social-media">
-                        <a href="#" class="social-icon">
+                        <router-link to ="/facebook"><a href="#" class="social-icon">
                             <i class="fab fa-facebook-f"></i>
-                        </a>
+                        </a></router-link>
                         <a href="#" class="social-icon">
                             <i class="fab fa-twitter"></i>
                         </a>
@@ -102,7 +102,8 @@
 
 <script>
 
-window.onload=function(){
+window.onload= loadPage;
+function loadPage(){
 const sign_in_btn = document.querySelector("#sign-in-btn");
 const sign_up_btn = document.querySelector("#sign-up-btn");
 const container = document.querySelector(".container");
@@ -235,7 +236,7 @@ form{
     line-height: 1;
     font-weight: 600;
     font-size: 1.1rem;
-    color: black;
+    color: white;
 }
 
 .input-field input::placeholder{
@@ -302,6 +303,7 @@ form{
     left: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    color: black;
 }
 
 .panel{
@@ -338,6 +340,7 @@ form{
 .panel p {
     font-size: 0.95rem;
     padding: 0.7rem 0;
+    color: white;
    
 }
 
@@ -466,6 +469,7 @@ form{
     background: rgb(165, 85, 240);
     color: #fff;
     border: none;
+
 }
 
 .close{
@@ -507,6 +511,7 @@ form{
         z-index: 10;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 2fr 1fr;
+        color: black;
     }
 
     .panel{
@@ -519,11 +524,13 @@ form{
     .panel .content{
         padding-right: 15%;
         transition: .9s .8s ease-in-out;
+
     }
 
     .panel h3{
         font-size: 1.2rem;
         padding: 0.5rem 0;
+        color: black;
     }
 
     .btn.transparent{
@@ -547,6 +554,7 @@ form{
 
     .right-panel .content, .right-panel .image{
         transform: translateY(300px);
+
     }
     
     .container.container.sign-up-mode:before{
@@ -558,6 +566,7 @@ form{
     .container.container.sign-up-mode .left-panel .image,
     .container.container.sign-up-mode .left-panel .content{
         transform: translateY(-300px);
+
     }
 
     .container.sign-up-mode .signin-signup{

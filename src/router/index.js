@@ -4,6 +4,9 @@ import Home from "../views/Home.vue";
 import Chatbot from "@/views/Chatbot.vue";
 import SignIn from "@/views/SignInFlow/SignIn.vue";
 import Resources from "@/views/Resources.vue";
+import Profile from "@/views/UserProfile.vue";
+//import { Profiler } from "react";
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -29,6 +32,19 @@ const routes = [
     component: Resources
   },
   
+  {
+    path: "/facebook",
+    beforeEnter() {
+      window.location.href = "https://www.facebook.com/";
+    }
+},
+
+{
+  path: "/userprofile",
+  name: "profile",
+  component: Profile
+}
+
 
   
 ]

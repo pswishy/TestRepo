@@ -12,7 +12,7 @@
         <p class="description">Mental health is a journey, not a destination. Free-automated chatbot called Evexia will be your +1 in your mental wellness improvement. Use Evexia to talk as a friend and/or find useful advice to keep in mind.</p>
         <router-link to ="/chatbot"><button class ="chatbotbutton"> Talk Now</button></router-link>
         <router-link to ="/signin"><button class="loginbutton">Login</button></router-link>
-        <p class="makean">Make an <span class = "account">account</span></p>
+        <p class="makean">Make an<router-link to ="/signin"><span class = "account">account</span></router-link></p>
         <div class="paragraphbox">
           <div class="paragraphcontainer1">
             <span class="percentage">90%<p class="text">Of those who die by sucide have an underlying mental illness</p></span>
