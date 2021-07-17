@@ -264,7 +264,9 @@ form{
 .social-text{
     padding: .7rem 0;
     font-size: 1rem;
+    color: black;
 }
+
 
 .social-media{
     display: flex;
@@ -324,6 +326,7 @@ form{
 .panel .content{
     color: #fff;
     transition: .9s .6s ease-in-out;
+    
 }
 
 .panel h3{
