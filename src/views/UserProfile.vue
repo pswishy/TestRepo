@@ -97,10 +97,10 @@ body{
 .container{
     padding: 20px;
     //background-color: black;
-    display: grid;
+    display: flex;
     justify-content: center;
     align-items: center;
-    //min-height: 80vh;
+    min-height: 100vh;
 }
 
     .card{
@@ -113,7 +113,7 @@ body{
     margin-bottom: 150px;
     overflow: hidden;
     //background-color: black;
-    height: 80vh;
+    //height: 80vh;
 }
 .saved:before{
     content: '';
