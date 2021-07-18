@@ -25,7 +25,7 @@
                             </div></router-link>
                         </div>
                         <a class="close">
-                            <img src="cancel.png" style="width:1em; height:1em;" onclick="popupToggle();">
+                            <img src="@/assets/cancel.png" style="width:1em; height:1em;" onclick="popupToggle();">
                         </a>
                     </div>
                     <p class="social-text">Or sign in with: </p>

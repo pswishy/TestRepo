@@ -1,6 +1,9 @@
 <template>
   <div class="container-fluid">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    /> -->
 
     <!-- <div class="col-sm-1 text-left">
       <div class="well">Basic Well</div>
@@ -14,112 +17,82 @@
     <div id="top"></div>
     <div id="bottom"></div>
 
-    <div class="app">  
-    
-     
-      <!--<Header/>-->  
-     
-
+    <div class="app">
+      <!--<Header/>-->
+      <Header/>
 
       <!-- Put a box on top of navbar-->
-        <nav class="navbar navbar">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button
-              type="button"
-              class="navbar-toggle"
-              data-toggle="collapse"
-              data-target="#myNavbar"
-            >
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-          </div>
-          <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-left">
-              <img src="@/assets/Group 16.png" />
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">home</a></li>
+     
 
-              <li class="active"><a href="#">resources</a></li>
-              <li><a href="#">chat</a></li>
-              <li>
-                <a class="number" href="#"><u>+1-800-273-TALK</u></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-  
-   <div class="row content">
+      <div class="row content">
         <div class="wrapper">
           <div id="Resources">Resources</div>
-        
-          <div class = "input-field">
-          <i class="fas fa-search "><input class="search" placeholder="   Search" type="text" /><i class="fas fa-times-circle"></i></i>
+
+          <div class="input-field">
+            <i class="fas fa-search"
+              ><input class="search" placeholder="   Search" type="text" /><i
+                class="fas fa-times-circle"
+              ></i
+            ></i>
           </div>
         </div>
 
-      <span>
-        <div class = 'well-container'>
-          <div class="well" id="first">
-            <h2>
-              benefits of exercise on mental health
-              <h4>
-                <u
-                  ><a
-                    class="inWell"
-                    href="https://www.helpguide.org/articles/healthy-living/the-mental-health-benefits-of-exercise.htm"
-                    target="_blank"
-                    >read blog</a
-                  ></u
-                >
-              </h4>
-            </h2>
+        <span>
+          <div class="well-container">
+            <div class="well" id="first">
+              <h2>
+                benefits of exercise on mental health
+                <h4>
+                  <u
+                    ><a
+                      class="inWell"
+                      href="https://www.helpguide.org/articles/healthy-living/the-mental-health-benefits-of-exercise.htm"
+                      target="_blank"
+                      >read blog</a
+                    ></u
+                  >
+                </h4>
+              </h2>
+            </div>
+            <div class="well" id="second">
+              <h2>
+                moderation - why do we do what we do
+                <h4>
+                  <u
+                    ><a
+                      class="inWell"
+                      href="https://healthyeating.sfgate.com/importance-moderation-1990.html"
+                      target="_blank"
+                      >read blog</a
+                    ></u
+                  >
+                </h4>
+              </h2>
+            </div>
+            <div class="well" id="third">
+              <h2>
+                31 tips to boost your mental health
+                <h4>
+                  <u
+                    ><a
+                      class="inWell"
+                      href="https://www.mhanational.org/31-tips-boost-your-mental-health"
+                      target="_blank"
+                      >read blog</a
+                    ></u
+                  >
+                </h4>
+              </h2>
+            </div>
           </div>
-          <div class="well" id="second">
-            <h2>
-              moderation - why do we do what we do
-              <h4>
-                <u
-                  ><a
-                    class="inWell"
-                    href="https://healthyeating.sfgate.com/importance-moderation-1990.html"
-                    target="_blank"
-                    >read blog</a
-                  ></u
-                >
-              </h4>
-            </h2>
-          </div>
-          <div class="well" id="third">
-            <h2>
-              31 tips to boost your mental health
-              <h4>
-                <u
-                  ><a
-                    class="inWell"
-                    href="https://www.mhanational.org/31-tips-boost-your-mental-health"
-                    target="_blank"
-                    >read blog</a
-                  ></u
-                >
-              </h4>
-            </h2>
-          </div>
-        </div>
-          </span>
-
+        </span>
 
         <article>
           <div class="tabs">
-            <div class= "ultabs">
+            <div class="ultabs">
               <li v-for="(tab, index) in tabs" :key="index">
                 <div
                   class="nav-item"
-                  
                   :class="{ 'is-active': tab.isActive }"
                   @click="selectTab(tab)"
                 >
@@ -212,9 +185,9 @@
 </template>
 
 <style lang="scss">
-@import "@/global-styles/resource.scss";
+@import "@/global-styles/colors.scss";
 @import "@/global-styles/typography.scss";
-*{
+* {
   padding: 0;
   margin: 0;
 }
@@ -239,22 +212,21 @@ a {
   color: black;
   &.number {
     color: $purple;
-    border-style: solid
+    border-style: solid;
   }
 }
 li {
   @include medium-text($black);
-  margin-right: 200px;
-  &.active{
+  margin-right: 50px;
+  &.active {
     border-bottom: 3px solid $light-purple;
-
   }
 }
 #top,
 #bottom,
 #left,
 #right {
-  //background: $purple; //Prob diff color
+  background: #c7b9ff; //Prob diff color
   margin: 0;
   padding: 0;
 }
@@ -304,8 +276,7 @@ li {
   margin-right: 0;
   width: 30%;
 }
-.container-fluid{
-  
+.container-fluid {
 }
 //Use for each tab
 .activities {
@@ -356,7 +327,6 @@ li {
   border-radius: 0px;
   background-color: $white;
   font-family: $font-family;
-  
 }
 .navbar-inverse .navbar-brand,
 .navbar-inverse .navbar-text {
@@ -381,7 +351,6 @@ li {
   margin-right: 60px;
   padding-bottom: 0;
   margin-bottom: 0;
-  
 }
 .tabs-details {
   margin: 0;
@@ -409,7 +378,7 @@ li {
   border-radius: 5px;
   box-shadow: 10px 10px 5px rgb(175, 174, 174), 0px 0px 10px 3px $light-purple;
 }
-.ultabs{
+.ultabs {
   display: flex;
   padding: 0;
   list-style: none;
@@ -447,7 +416,6 @@ li {
     }
   }
 }
-
 .wrapper {
   //position: relative;
   //display: flex;
@@ -456,19 +424,19 @@ li {
   //min-width: 100%;
   padding-top: 0px;
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(150px,1fr) );
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
-.input-field{
-    //max-width: 300px;
-    //width: 100%;
-    height: 55px;
-    margin-left: 120px;
-    //background-color: rgb(166, 131, 248) ;
-    ///margin: 10px 0;
-    border-radius: 55px;
-    display: flex;
-    grid-template-columns: 15% 85%;
-    //padding: 0 .4rem;
+.input-field {
+  //max-width: 300px;
+  //width: 100%;
+  height: 55px;
+  margin-left: 120px;
+  //background-color: rgb(166, 131, 248) ;
+  ///margin: 10px 0;
+  border-radius: 55px;
+  display: flex;
+  grid-template-columns: 15% 85%;
+  //padding: 0 .4rem;
 }
 .search {
   border: 0px solid;
@@ -481,7 +449,6 @@ li {
   width: 200px;
   outline: 0;
   background-color: #e0e0e0f3;
-  
 }
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -504,12 +471,11 @@ li {
   min-height: 100px;
   //margin-top: 15px;
 }
-.well-container{
+.well-container {
   //background-color: blue;
   display: grid;
   grid-gap: 2em;
-  grid-template-columns: repeat(auto-fit,minmax(150px,1fr) );
-  
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 .well {
   //visibility: hidden;
@@ -553,15 +519,13 @@ li {
 
 <script>
 import Tab from "@/components/Tab";
-//import Header from "@/components/Header.vue"
+import Header from "@/components/Header.vue"
 //import Tabs from "@/components/Tabs";
 export default {
   name: "App",
   components: {
     Tab,
-    //Header
-    
-    
+    Header
     //Tabs,
   },
   data: () => {
@@ -569,7 +533,6 @@ export default {
       tabs: [],
     };
   },
-  
   methods: {
     selectTab(selectedTab) {
       this.tabs.forEach((tab) => {
