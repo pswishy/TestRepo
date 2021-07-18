@@ -93,9 +93,7 @@ export default {
 body{
     background-color: #C7B9FF;
 }
-.title{
-    margin-bottom: 5px;
-}
+
 .container{
     padding: 20px;
     //background-color: black;
