@@ -1,34 +1,55 @@
 exports.handler = async (event) => {
     let {name, slots} = event.currentIntent
     
-    if (!slots.DaysSinceEaten&&
-        slots.NumericFeelings <= 5 &&
+    if (!slots.SelfHelpPrompt&&
+        slots.NumericFeelings > 0 &&
+        slots.NumericFeelings < 11 &&
         slots.NumericFeelings) {
 
         return {
             dialogAction:{
                 type: "ElicitSlot",
                 intentName: name,
-                slotToElicit: "DaysSinceEaten",
+                slotToElicit: "SelfHelpPrompt",
                 slots
             }
         }
     }
-    if(!slots.MeditationCheck&&
-        slots.NumericFeelings > 5){
+
+
+    if(!slots.DisorderCheck&&
+        slots.SelfHelpPrompt&&
+        slots.SelfHelpPrompt.toLowerCase()== 'no'){
         return{
-            dialogAction:{
+            dialogAction: {
                 type: "ElicitSlot",
                 intentName: name,
-                slotToElicit: "MeditationCheck",
+                slotToElicit: "DisorderCheck",
                 slots
+            }
+        }
+    }
+    
+    if(!slots.DisorderCheck&&
+        slots.SelfHelpPrompt&&
+        slots.SelfHelpPrompt.toLowerCase()== 'yes'){
+            return{
+                dialogAction:{
+                    type: "ElicitIntent",
+                    "message":{
+                        "contentType": "PlainText",
+                        "content": "Call my friends at 1-800-273-TALK!"
+                        
+                    }
+                }
             }
         }
 
-    }
+     //"contentType": "PlainText",
+     //"content": "Call my friends at 1-800-273-TALK!"
     
     if(!slots.ExerciseCheck&&
-        slots.MeditationCheck == 'yes'){
+        slots.DisorderCheck == 'yes'){
         return{
             dialogAction:{
                 type: "ElicitSlot",
@@ -39,17 +60,6 @@ exports.handler = async (event) => {
         }
     }
 
-    if(slots.ExerciseCheck=='no'){
-        return{
-            dialogAction:{
-                type: "ElicitIntent",
-                "message":{
-                    "contentType": "PlainText",
-                    "content": "Try and go for a walk today"
-                } 
-            }
-        }
-    }
     return{
         dialogAction:{
             type: "Delegate",
@@ -58,21 +68,3 @@ exports.handler = async (event) => {
     }
  
 };
-
-
-
-//"responseCard":{
-   // "version": integer-value,
-  //  "contentType": "application/vnd.amazonaws.card.generic",
-  //  "genericAttachments":[
-   //     {
-    //        "title": "testimage",
-    //        "subTitle": "subtextimage",
-   //         "imageUrl": "https://www.facebook.com/Pndejoide0/photos/a.104787814248049/454889565904537/?type=1&theater",
-   //         "buttons":[
-  //              {
-   //                 "text": "testbutton1",
-   //                 "value": "6"
-  //              }]
- //       }]
-//}
