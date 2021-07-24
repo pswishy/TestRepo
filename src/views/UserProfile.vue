@@ -71,6 +71,27 @@
 <script>
 import Header from "@/components/Header.vue";
 import Disclaimer from "@/components/Disclaimer.vue";
+
+window.onload = loadPage;
+function loadPage(){
+const image = document.querySelector('.image');
+const hover = document.querySelector('.hover');
+const modal = document.querySelector('.modal');
+const close = document.querySelector('.close');
+
+function show(){
+    hover.classList.add('active');
+    modal.classList.add('show');
+}
+
+function hide(){
+    hover.classList.remove('active');
+    modal.classList.remove('show');
+}
+
+image.addEventListener('click', show);
+close.addEventListener('click', hide);
+}
 export default {
   name: "App",
   components: {
@@ -268,7 +289,7 @@ body{
     width: 110px;
     height: 110px;
     border-radius: 50%;
-    background: src= "@/assets/avatar.png" no-repeat center / cover;
+    background: src= "@/assets/avatar.png"; //no-repeat center / cover;
     overflow: hidden;
     cursor: pointer;
 }

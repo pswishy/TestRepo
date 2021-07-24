@@ -8,7 +8,7 @@
         <router-link to =/about><p class="telephone"><i class="fas fa-phone-alt"></i>+1-800-273-TALK</p></router-link>
        <!-- <p class="aboutbutton">About</p> -->
         <router-link to = "/resources"><p class="resourcebutton">Resources</p></router-link>
-        <router-link to ="/signin"><p class="signinbutton">Login</p></router-link>
+        <router-link to ="/chatbot"><p class="chatbutton">Chat</p></router-link>
         <router-link to ="/"><p class = "homebutton">Home</p></router-link>
         <img src="@/assets/Group 16.png" width="150" height="50">
     </div>
@@ -75,7 +75,7 @@
         
     }
 }
-.signinbutton{
+.chatbutton{
     float: right;
   font-family: 'Nunito Sans', sans-serif;
 

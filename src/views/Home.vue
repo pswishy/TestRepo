@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <div class="container">
       <div class="textcontainer">
-        <img src= "@/assets/rainbowtext.png">
+        <img src= "@/assets/rainbowtext.png" alt="rainobwtext"  style = "width: 60%;">
         <p class="largetext">You are not alone, Evexia is on your side<i class="fas fa-arrow-right"></i></p>
         <p class="description">Mental health is a journey, not a destination. Free-automated chatbot called Evexia will be your +1 in your mental wellness improvement. Use Evexia to talk as a friend and/or find useful advice to keep in mind.</p>
         <router-link to ="/chatbot"><button class ="chatbotbutton"> Talk Now</button></router-link>
@@ -44,11 +44,13 @@
 // @ is an alias to /src
 import Header from "@/components/Header.vue";
 import Disclaimer from "@/components/Disclaimer.vue";
+//import Mood from "@/components/mood.vue";
 export default {
   name: "Home",
   components: {
     Header,
-    Disclaimer
+    Disclaimer,
+    
   }
 };
 </script>
