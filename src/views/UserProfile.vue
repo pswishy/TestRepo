@@ -71,10 +71,8 @@
 <script>
 import Header from "@/components/Header.vue";
 import Disclaimer from "@/components/Disclaimer.vue";
-
-window.onload = loadPage;
-function loadPage(){
-const image = document.querySelector('.image');
+window.addEventListener('click', function (){
+    const image = document.querySelector('.image');
 const hover = document.querySelector('.hover');
 const modal = document.querySelector('.modal');
 const close = document.querySelector('.close');
@@ -91,7 +89,9 @@ function hide(){
 
 image.addEventListener('click', show);
 close.addEventListener('click', hide);
-}
+
+})
+
 export default {
   name: "App",
   components: {

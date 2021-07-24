@@ -6,33 +6,62 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     
         <img style = "" src="@/assets/spots.png" onclick="popupToggle();">
+        <div class = "words">Choose your Moods</div>
         <div class = "btn-group1">
-            <h1 class="choose">Choose</h1>
+           <!-- <h1 class="choose">Choose</h1>
             <h1 class="your">your </h1>
-            <h1 class="moods">Moods</h1>
-            <button  style = "height: 150px" class="energetic"><i class="far fa-sun"></i><p>Energetic</p></button>
-            <button style ="" class ="neutral"><i class="far fa-meh"></i><p>Neutral</p></button>
-            <button style ="" class = "relaxed"><i class="far fa-smile"></i><p>Relaxed</p></button>
-            <button style ="height: 150px" class = "indecisive"><i class="far fa-meh-blank"></i><p>Indecisive</p></button>
-            <button style ="" class = 'sad'><i class="far fa-frown"></i><p>Sad</p></button>
-            <button  style ="" class = 'sleepy'><i class="far fa-moon"></i><p>Sleepy</p></button>
-            <button class= "next">Next</button>
+            <h1 class="moods">Moods</h1>-->
+            <button  style = "height: 150px" id="energetic"><i class="far fa-sun"></i><p>Energetic</p></button>
+            <button style ="" id ="neutral"><i class="far fa-meh"></i><p>Neutral</p></button>
+            <button style ="" id = "relaxed"><i class="far fa-smile"></i><p>Relaxed</p></button>
+            <button style ="height: 150px" id = "indecisive"><i class="far fa-meh-blank"></i><p>Indecisive</p></button>
+            <button style ="" id = 'sad'><i class="far fa-frown"></i><p>Sad</p></button>
+            <button  style ="" id = 'sleepy'><i class="far fa-moon"></i><p>Sleepy</p></button>
+            <router-link to = "/chatbot"><button id= "next">Next</button></router-link>
         </div>
         <div class = "close"></div>
     </div>
 </template>
 
 <script>
-window.onload = loadPage;
-function loadPage(){
-    const box = document.getElementsByClassName('box');
-    function popupToggle(){
-    box.classList.toggle('active');
-}
-box.addEventListener('mousedown', () => {
-    popupToggle();
+window.addEventListener('click', function (){
+    let btnenergetic = document.querySelector('#energetic');
+    let btnneutral = document.querySelector('#neutral');
+    let btnrelaxed = document.querySelector('#relaxed');
+    let btnindecisive = document.querySelector('#indecisive');
+    let btnsad = document.querySelector('#sad');
+    let btnsleepy = document.querySelector('#sleepy');
+    //if(document.querySelector('#energetic').value)
+    btnenergetic.addEventListener('click', ()=>btnenergetic.style.backgroundColor= '#A259FF');
+    btnenergetic.addEventListener('click', ()=>btnenergetic.style.borderColor= '#000000');
+
+    btnneutral.addEventListener('click', ()=>btnneutral.style.backgroundColor= '#A259FF');
+    btnneutral.addEventListener('click', ()=>btnneutral.style.borderColor= '#000000');
+
+    btnrelaxed.addEventListener('click', ()=>btnrelaxed.style.backgroundColor= '#A259FF');
+    btnrelaxed.addEventListener('click', ()=>btnrelaxed.style.borderColor= '#000000');
+
+    btnindecisive.addEventListener('click', ()=>btnindecisive.style.backgroundColor= '#A259FF');
+    btnindecisive.addEventListener('click', ()=>btnindecisive.style.borderColor= '#000000');
+
+    btnsad.addEventListener('click', ()=>btnsad.style.backgroundColor= '#A259FF');
+    btnsad.addEventListener('click', ()=>btnsad.style.borderColor= '#000000');
+
+    btnsleepy.addEventListener('click', ()=>btnsleepy.style.backgroundColor= '#A259FF');
+    btnsleepy.addEventListener('click', ()=>btnsleepy.style.borderColor= '#000000');
+
+
 });
-}
+
+//window.attachEvent('onload', function (){
+ //  alert('Function #1');
+//});
+//window.onload = loadPage;
+//function loadPage(){
+  //  let btnenergetic = document.querySelector('#energetic');
+  //  if(document.querySelector('#energetic').value)
+  //  btnenergetic.addEventListener('click', ()=>btnenergetic.style.backgroundColor= '#A259FF')
+//}
 
     export default {
         name: "Mood"
@@ -47,6 +76,18 @@ box.addEventListener('mousedown', () => {
 *{
   padding: 0;
   margin: 0;
+}
+.words{
+position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+    color: $purple;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    margin-left: 15px;
+
 }
 .box{
     background: $light-purple;
@@ -64,13 +105,14 @@ box.addEventListener('mousedown', () => {
     //width: 100%;
     height: 700px;
     //width: 600px;
+    border-color: $light-purple;
 }
 
 .box .btn-group1 {
     //background-color: black;
     //border-color: $purple;
     position: absolute;
-    margin-left: 330px;
+    margin-left: 280px;
     margin-top: 280px;
     display: grid;
     grid-gap: 40px 10px;
@@ -86,12 +128,12 @@ box.addEventListener('mousedown', () => {
     cursor: pointer;
     border-radius: 5px;
 }
-.relaxed, 
-.indecisive,
-.energetic,
-.sad,
-.sleepy,
-.neutral{
+#relaxed, 
+#indecisive,
+#energetic,
+#sad,
+#sleepy,
+#neutral{
     //margin-bottom: 200px;
     //margin-left: 5px;
     background-color: transparent;
@@ -135,7 +177,7 @@ p{
     font-weight: 600;
     margin-bottom: 20px;
 }
-.next{
+#next{
     margin-left: 220px;
     background-color: $purple;
     width: 100%;
@@ -144,14 +186,18 @@ p{
     border: none;
     color: white;
     font-size: 20px;
+    &:hover {
+    cursor:pointer;
+    
+  }
 }
 
-.energetic:hover,
-.neutral:hover,
-.relaxed:hover,
-.indecisive:hover,
-.sad:hover,
-.sleepy:hover {
+#energetic:hover,
+#neutral:hover,
+#relaxed:hover,
+#indecisive:hover,
+#sad:hover,
+#sleepy:hover {
   background-color: $purple;
   &:hover {
     cursor:pointer;
