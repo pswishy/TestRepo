@@ -1,4 +1,5 @@
 <template>
+
     <div id= "nav">
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -8,7 +9,7 @@
         <router-link to =/about><p class="telephone"><i class="fas fa-phone-alt"></i>+1-800-273-TALK</p></router-link>
        <!-- <p class="aboutbutton">About</p> -->
         <router-link to = "/resources"><p class="resourcebutton">Resources</p></router-link>
-        <router-link to ="/mood"><p class="chatbutton">Chat</p></router-link>
+        <router-link to ="/mood"><p class= "chatbutton">Chat</p></router-link>
         <router-link to ="/"><p class = "homebutton">Home</p></router-link>
         <img src="@/assets/Group 16.png" width="150" height="50">
     </div>
@@ -16,6 +17,13 @@
 </template>
 
 <script>
+//window.addEventListener('click', function(){
+
+    //const popup = document.getElementById('popup');
+
+    //popup.classList.toggle('active');
+    
+//})
     export default {
         name: "Header"
         
@@ -138,5 +146,165 @@ img{
     
     
 }
+}
+
+//Pop up code
+
+.box .overlay{
+    position: fixed;
+    //top: 0px;
+    //left: 0px;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    z-index: 1;
+    display: none;
+}
+.box.active .overlay{
+    display: block;
+}
+.box.active .words .close-btn .btn-group1 img{
+    transition: all 300ms ease-in-out;
+      transform: translate(-50%, -50%) scale(1);
+
+}
+.words{
+position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  font-size: 40px;
+    color: $purple;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    margin-left: 15px;
+
+}
+.close-btn{
+    position: absolute;
+    transform: translate(-50%, -50%) scale(0);
+    top: 7%;
+    //left: 10%;
+    color: $purple;
+    margin-right: 500px;
+    font-size: 50px;
+
+}
+.box{
+    background: $light-purple;
+   //position: relative;
+   //width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transform: translate(-50%, -50%) scale(0);
+
+}
+
+.box img{
+    //width: 100%;
+    height: 700px;
+    width: 700px;
+    border-color: $light-purple;
+    transform: translate(-50%, -50%) scale(0);
+
+}
+
+.box .btn-group1 {
+    //background-color: black;
+    //border-color: $purple;
+    position: absolute;
+    margin-left: 280px;
+    margin-top: 280px;
+    display: grid;
+    grid-gap: 40px 10px;
+    //grid-gap-bottom: 5px;
+    grid-template-columns: repeat(3,minmax(150px,1fr) );
+    transform: translate(-50%, -50%) scale(0);
+    -ms-transform: translate(-50%, -50%)scale(0);
+    transition: 200ms ease-in-out;
+    //background-color: yellow;
+    //color: black;
+    font-size: 16px;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#relaxed, 
+#indecisive,
+#energetic,
+#sad,
+#sleepy,
+#neutral{
+    //margin-bottom: 200px;
+    //margin-left: 5px;
+    background-color: transparent;
+    border-color: $purple;
+    border-radius: 10px;
+}
+
+.fa-sun,
+.fa-meh,
+.fa-smile,
+.fa-meh-blank,
+.fa-frown,
+.fa-moon{
+    font-size: 25px;
+    //margin-bottom: 10px;
+}
+.choose,
+.your,
+.moods{
+    font-size: 40px;
+    color: $purple;
+}
+.choose{
+    margin-left: 130px;
+}
+.your{
+    margin-left: 80px;
+   //margin-top: 25px;
+}
+.moods{
+    //margin-left: 100px;
+    //margin-right: 50px;
+    
+}
+
+p{
+    color: black;
+    font-size: 25px;
+    //text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+#next{
+    margin-left: 220px;
+    background-color: $purple;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    &:hover {
+    cursor:pointer;
+    
+  }
+}
+
+#energetic:hover,
+#neutral:hover,
+#relaxed:hover,
+#indecisive:hover,
+#sad:hover,
+#sleepy:hover {
+  background-color: $purple;
+  &:hover {
+    cursor:pointer;
+    
+  }
 }
 </style>

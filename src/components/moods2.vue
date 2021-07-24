@@ -22,16 +22,18 @@
         </div>
        <!--onclick ="togglePopup();"-->
         <!--<div class = "close"></div>-->
-       <!-- <div>       <button class= "test" >pop up</button>
-    </div>-->
+        <div>       <button class= "test" >pop up</button>
+    </div>
     </div>
     
 
 </template>
 
 <script>
-
-window.addEventListener('click',function(){
+window.addEventListener('load',function(){
+    document.querySelector(".box").classList.toggle("active");
+    document.querySelector("#next").classList.toggle("close")
+    window.addEventListener('click',function(){
     
     
     let btnenergetic = document.querySelector('#energetic');
@@ -62,6 +64,7 @@ window.addEventListener('click',function(){
 
 });
 
+})
 
     //document.getElementsByClassName("test").classList.toggle("active")
 
@@ -90,26 +93,27 @@ window.addEventListener('click',function(){
   margin: 0;
 }
 
+
+
+.words{
+position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%)scale(0);
+  font-size: 40px;
+    color: $purple;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    margin-left: 15px;
+}
 .box .close-btn{
-transform: translate(-50%, -50%) scale(1);
+transform: translate(-50%, -50%) scale(0);
 position: absolute;
 top: 7%;
 margin-right: 500px;
 font-size: 40px;
 color: $purple;
 //background: black;
-}
-
-.words{
-position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 40px;
-    color: $purple;
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 600;
-    margin-left: 15px;
 }
 .box{
     background: $light-purple;
@@ -118,18 +122,70 @@ position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    //min-height: 100vh;
+    visibility: hidden;
+    //height: 700px;
+    //width: 700px;
+    //margin-left: 300px;
+    //transform: translate(-50%, -50%) scale(0);
+
 }
 .box.active{
     visibility: visible;
+    min-height: 100vh;
 }
-.box img{
+
+
+.box .overlay{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,0.2);
+    z-index: 1;
+    display: none;
+}
+.box.active .overlay{
+    display: block;
+}
+.close-btn.active{
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+    -ms-transform: translate(-50%, -50%)scale(1);
+}
+.box.active .words {
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+    -ms-transform: translate(-50%, -50%)scale(1);
+    margin-right: 150px;
+}
+ .box.box.active .btn-group1{
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+    -ms-transform: translate(-50%, -50%)scale(1);
+    margin-left: 343px;
+}
+.box.active #image{
+    position: absolute;
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+    -ms-transform: translate(-50%, -50%)scale(1);
+    height: 700px;
+    margin-top: 350px;
+    margin-left: 330px;
+
+}
+.box #image{
     //width: 100%;
     height: 700px;
     //width: 600px;
     border-color: $light-purple;
+    position: absolute;
+    transform: translate(-50%, -50%)scale(0);
 }
-.box .btn-group1 {
+
+ .box .btn-group1 {
     //background-color: black;
     //border-color: $purple;
     position: absolute;
@@ -139,7 +195,7 @@ position: absolute;
     grid-gap: 40px 10px;
     //grid-gap-bottom: 5px;
     grid-template-columns: repeat(3,minmax(150px,1fr) );
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)scale(0);
     -ms-transform: translate(-50%, -50%);
     transition: 200ms ease-in-out;
     //background-color: yellow;
@@ -148,6 +204,8 @@ position: absolute;
     padding: 12px 24px;
     cursor: pointer;
     border-radius: 5px;
+    box-sizing: border-box;
+    //z-index: 2;
 }
 #relaxed, 
 #indecisive,
