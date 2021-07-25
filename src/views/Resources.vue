@@ -28,11 +28,7 @@
           <div id="Resources">Resources</div>
 
           <div class="input-field">
-            <i class="fas fa-search"
-              ><input class="search" placeholder="   Search" type="text" /><i
-                class="fas fa-times-circle"
-              ></i
-            ></i>
+            <i class="fas fa-search"></i><input class="search" placeholder="Search" type="text"><i class="fas fa-times-circle"></i>
           </div>
         </div>
 
@@ -642,13 +638,25 @@ li {
   border: 0px solid;
   border-radius: 10px;
   //display: flex;
-  margin-top: 18px;
+  margin-top: 30px;
   flex: right;
   //margin-left: 200px;
   height: 30px;
-  width: 200px;
+  width: 230px;
   outline: 0;
+  text-align: left;
+  padding-left: 30px;
   background-color: #e0e0e0f3;
+}
+.fa-search{
+  position: absolute;
+  margin-top: 35px;
+  margin-left: 10px;
+}
+.fa-times-circle{
+  position: absolute;
+  margin-left: 230px;
+  margin-top:37px;
 }
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -670,6 +678,9 @@ li {
   color: white;
   text-align: center;
   min-height: 100px;
+  border-color: blue;
+  border-style: solid;
+  border-width: .5px;
   //margin-top: 15px;
 }
 #second,
@@ -679,6 +690,9 @@ li {
   text-align: center;
   min-height: 100px;
   //margin-top: 15px;
+  border-color: blue;
+  border-style: solid;
+  border-width: 0.2px;
 }
 .well-container {
   //background-color: blue;
