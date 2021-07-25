@@ -10,8 +10,8 @@
             <p class= "about">About</p>
             <p class="privacy">Priacy Policy</p>
             <p class= "security">Security</p>
-            <p class = "contact">Contact</p>
             <p class="chatbot">Chatbot</p>
+            <p class = "contact">Evexia@Help.Com</p>
         </div>
     <div class="warningbox">
         <p class= "warning">*Evexia should not be used for profreessional medical diagnosis* </p>
