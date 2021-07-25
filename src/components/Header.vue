@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <div class="headercontainer">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-        <router-link to =/about><p class="telephone"><i class="fas fa-phone-alt"></i>+1-800-273-TALK</p></router-link>
+        <!--<router-link to =/about>--><p class="telephone"><i class="fas fa-phone-alt"></i>+1-800-273-TALK</p><!--</router-link>-->
        <!-- <p class="aboutbutton">About</p> -->
         <router-link to = "/resources"><p class="resourcebutton">Resources</p></router-link>
         <router-link to ="/mood"><p class= "chatbutton">Chat</p></router-link>
