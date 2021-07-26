@@ -6,7 +6,8 @@ import SignIn from "@/views/SignInFlow/SignIn.vue";
 import Resources from "@/views/Resources.vue";
 import Profile from "@/views/UserProfile.vue";
 //import { Profiler } from "react";
-import Mood from "@/components/mood.vue"
+import Mood from "@/components/mood.vue";
+import Interest from "@/components/interest.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -48,9 +49,13 @@ const routes = [
   path: "/mood",
   name: "mood",
   component: Mood
+},
+
+{
+  path: "/interest",
+  name: "interest",
+  component: Interest
 }
-
-
   
 ]
 const router = new VueRouter({
