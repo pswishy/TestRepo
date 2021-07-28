@@ -15,7 +15,18 @@ $font-Cursive: "Comic Sans MS", "Comic Sans", cursive;
     margin:0;
     text-align: center;
     font-size: 20px;
-    line-height: 26px;
+    line-height: 30px;
+    font-weight: normal;
+    color: $color;
+}
+
+@mixin heading-2-right($color: $white) {
+    margin:0;
+    padding:0;
+    text-align: right;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight:normal;
     color: $color;
 }
 
@@ -30,7 +41,7 @@ $font-Cursive: "Comic Sans MS", "Comic Sans", cursive;
     line-height: 22px;
     text-align: center;
     color: $color;
-    font-weight:lighter;
+    font-weight:normal;
 }
 
 // Body Text
