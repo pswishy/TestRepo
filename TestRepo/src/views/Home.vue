@@ -21,7 +21,7 @@
               <span class="percentage">70%<p class="text">Children & adolescents who experience mental health don’t have apporiate interventions  </p></span>
               </div>
               <div class = "paragraphcontainer3">
-                <span class="percentage">39%<p class = "text">LGBTQ+ population has reported having a mental illness in the past year.</p></span>
+                <span class="percentage">39%<p class = "text">LGBTQ+ population has reported having a mental illness in the past year. almost 3x more likely to experience a mental health condition </p></span>
                 </div>
           </div>
         </div>
@@ -80,12 +80,10 @@ export default {
 }
 img{
   width: 100%;
-  //height: 100%;
 }
-
 .largetext{
-  margin-top: 40px;
-  font-size: 32px;
+  margin-top: 20px;
+  font-size: 40px;
   line-height: 47px;
   text-align: center;
   font-family: 'Inter', sans-serif;
@@ -95,12 +93,10 @@ img{
   
 }
 .description{
-  margin-top: 30px;
+  margin-top: 20px;
   font-style: normal;
-  width: 90%;
-  font-size: 20px;
-  
-  line-height: 25px;
+  font-size: 23px;
+  line-height: 18px;
   text-align: left;
   color: $purple;
   font-family: 'Nunito Sans', sans-serif;
@@ -113,7 +109,7 @@ img{
   border-radius: 50px;
   box-shadow: none;
   border:none;
-  width: 35%;
+  width: 45%;
   height: 50px;
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 700;
@@ -127,15 +123,13 @@ img{
 }
 }
 .loginbutton{
-  position: absolute;
   margin-top: 40px;
   float: right;
   border-radius: 50px;
   border-style: solid;
   border-color:$purple;
   background: white;
-  width: 250px;
-  margin-left: 60px;
+  width: 45%;
   height: 50px;
   
   font-family: 'Nunito Sans', sans-serif;
@@ -146,10 +140,8 @@ img{
 }
 }
 .makean{
-  position: absolute;
-
-  margin-top: 90px;
-  margin-left: 360px;
+  margin-top: 10px;
+  margin-right: 25px;
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 700;
   font-size: 20px;
@@ -185,20 +177,17 @@ margin-right: 10px;
   font-family: 'Nunito Sans', sans-serif;
   font-style: normal;
   font-weight: 900;
-  font-size: 28px;
+  font-size: 34px;
   line-height: 42px;
   
 }
 .text{
-  position: relative;
-  margin-right: 250px;
   font-family: 'Nunito Sans', sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 20px;
   color: black;
   text-align: left;
-  width: 79%;
 }
 </style>

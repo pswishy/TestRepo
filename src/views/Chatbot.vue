@@ -75,10 +75,18 @@ export default {
   width: 100%;
   display: flex;
 
+
   //grid-template-columns: repeat(auto-fit,minmax(150px,1fr) );
   //grid-gap: 10em;
 
   height: 90px;
+
+  
+  //grid-template-columns: repeat(auto-fit,minmax(150px,1fr) );
+  //grid-gap: 10em;
+
+  height: 60px;
+
   //background: green;
   box-shadow: 0px 2px 43px 1px rgba(199, 185, 255, 0.41);
 }
