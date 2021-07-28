@@ -4,7 +4,7 @@
 
         <div class="forms_container">
             <div class="signin-signup">
-                <form action="" class="sign-in-form"> 
+                <form action="" class="sign-in-form" id="sign-in"> 
                     <h2 class="title">Sign in</h2>
           <div class="input-field">
                         <i class = "fas fa-user"></i>
@@ -125,6 +125,7 @@ window.addEventListener('click', function (){
     const container = document.querySelector(".container");
     const popup = document.getElementById('popup');
     const login = document.querySelector('#login_btn');
+    const formlog = document.getElementById("sign-in");
     
     sign_up_btn.addEventListener('click', () => {
         container.classList.add("sign-up-mode");
@@ -139,8 +140,16 @@ window.addEventListener('click', function (){
     }
 
    
-    login.addEventListener('mousedown', () => {
-        popupToggle();
+    login.addEventListener('click', (e) => {
+        e.preventDefault();
+        const username = formlog.username.value;
+        const password = formlog.password.value;
+        if(username === "Madison" && password === "PassWord1!"){
+            popupToggle();
+        }
+        else{
+            alert("This seems like you have inputted the wrong information. Please try again!")
+        }
     });
 })
 </script>
