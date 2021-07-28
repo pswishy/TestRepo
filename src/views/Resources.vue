@@ -17,18 +17,19 @@
     <div id="top"></div>
     <div id="bottom"></div>
 
+    <Header />
     <div class="app">
-      <Header/>
-
       <!-- Put a box on top of navbar-->
-     
 
       <div class="row content">
         <div class="wrapper">
           <div id="Resources">Resources</div>
 
           <div class="input-field">
-            <i class="fas fa-search"></i><input class="search" placeholder="Search" type="text"><i class="fas fa-times-circle"></i>
+            <i class="fas fa-search"></i
+            ><input class="search" placeholder="Search" type="text" /><i
+              class="fas fa-times-circle"
+            ></i>
           </div>
         </div>
 
@@ -79,6 +80,11 @@
                 </h4>
               </h2>
             </div>
+            <h5>
+              <a href="#" class="MoreTop"
+                >see more <img src="@/assets/greyArrow.png" id="arrow" />
+              </a>
+            </h5>
           </div>
         </span>
 
@@ -101,7 +107,7 @@
           </section>
         </article>
 
-         <Tabs class="tabs">
+        <Tabs class="tabs">
           <Tab name="Activities" id="activities" selected="true">
             <a href="https://www.netflix.com/" target="_blank">
               <img src="@/assets/Netflix.png" id="Netflix"
@@ -141,10 +147,13 @@
             >
               <img src="@/assets/Cooking.png" id="Cooking"
             /></a>
+
+            <h5>
+              <a href="#" class="More"
+                >see more <img src="@/assets/arrow.png" id="arrow" />
+              </a>
+            </h5>
           </Tab>
-
-
-
 
           <Tab name="Healthcare" id="healthcare">
             <a href="https://www.teladoc.com/therapy/" target="_blank">
@@ -170,6 +179,12 @@
             <a href="https://www.teladoc.com/therapy/" target="_blank">
               <img src="@/assets/healthcare.png" id="HealthCare2"
             /></a>
+
+            <h5>
+              <a href="#" class="More"
+                >see more <img src="@/assets/arrow.png" id="arrow" />
+              </a>
+            </h5>
           </Tab>
 
           <Tab name="Research" id="research">
@@ -214,6 +229,12 @@
             >
               <img src="@/assets/research.png" id="Research2"
             /></a>
+
+            <h5>
+              <a href="#" class="More"
+                >see more <img src="@/assets/arrow.png" id="arrow" />
+              </a>
+            </h5>
           </Tab>
 
           <Tab name="Crowdfunding" id="crowdfunding">
@@ -258,6 +279,12 @@
             >
               <img src="@/assets/crowdfunding.png" id="Crowdfunding2"
             /></a>
+
+            <h5>
+              <a href="#" class="More"
+                >see more <img src="@/assets/arrow.png" id="arrow" />
+              </a>
+            </h5>
           </Tab>
 
           <Tab name="Hotlines" id="hotlines">
@@ -302,6 +329,12 @@
             >
               <img src="@/assets/hotlines.png" id="Hotlines2"
             /></a>
+
+            <h5>
+              <a href="#" class="More"
+                >see more <img src="@/assets/arrow.png" id="arrow" />
+              </a>
+            </h5>
           </Tab>
 
           <Tab name="Facts" id="facts">
@@ -346,6 +379,12 @@
             >
               <img src="@/assets/facts.png" id="Facts2"
             /></a>
+
+            <h5>
+              <a href="#" class="More"
+                >see more <img src="@/assets/arrow.png" id="arrow" />
+              </a>
+            </h5>
           </Tab>
         </Tabs>
       </div>
@@ -378,39 +417,99 @@ h1 {
   font-family: $font-family;
 }
 
-h2{
+h2 {
   @include heading-2($white);
   margin-top: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
+
 h3 {
   @include heading-3($black);
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-h4{
+
+h4 {
   @include heading-4($white);
   border: 2px solid $white;
   border-radius: 6px;
   width: 60%;
-  color: $white;
-  margin-left: 3.5rem;
+  //color: $white;
+  margin-left: 2.9rem;
+  margin-top: 8px;
 }
+
+h5 {
+  @include heading-2-right($white);
+  a {
+    &.MoreTop {
+      color: #808080;
+      padding-left: 40px;
+    }
+    &:link {
+      text-decoration: none;
+    }
+    &:visited {
+      text-decoration: none;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+    &:active {
+      text-decoration: none;
+    }
+  }
+}
+
 p {
   @include medium-text($light-blue);
 }
+
+#arrow {
+  float: right;
+}
 a {
-  color: white;
+  color: $white;
+
+  &:hover {
+    color: black;
+  }
+
+  &.More {
+    color: $white;
+    &:link {
+      text-decoration: none;
+    }
+    &:visited {
+      text-decoration: none;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+    &:active {
+      text-decoration: none;
+    }
+  }
+
   &.number {
     color: $purple;
     border-style: solid;
   }
   &.inwell {
     color: $white;
+    &:link {
+      text-decoration: none;
+    }
+    &:visited {
+      text-decoration: none;
+    }
     &:hover {
       color: $black;
     }
   }
 }
+
 li {
   @include medium-text($black);
   margin-right: 50px;
@@ -458,31 +557,43 @@ li {
   font-family: $font-family;
   font-weight: bold;
   //text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4);
-  margin-left: 5.6rem;
+  margin-left: 60px;
 }
-#Netflix {
+
+#Netflix,
+#StressBall,
+#Arcade,
+#Journal,
+#Exercise,
+#Cooking,
+#HealthCare,
+#HealthCare2,
+#Research,
+#Research2,
+#Crowdfunding,
+#Crowdfunding2,
+#Hotlines,
+#Hotlines2,
+#Facts,
+#Facts2 {
   width: 30%;
+  margin-bottom: 80px;
+  margin-top: 20px;
+  border-radius: 5px;
 }
-#StressBall {
-  margin-left: 65px;
-  width: 30%;
+
+#StressBall,
+#Arcade,
+#Exercise,
+#Cooking,
+#HealthCare2,
+#Research2,
+#Crowdfunding2,
+#Hotlines2,
+#Facts2 {
+  margin-left: 60px;
 }
-#Minecraft {
-  margin-left: 65px;
-  margin-right: 0;
-  width: 30%;
-}
-.container-fluid {
-}
-//Use for each tab
-.activities {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
+
 .app {
   font-family: $font-family;
   -webkit-font-smoothing: antialiased;
@@ -495,15 +606,12 @@ li {
   //border-bottom: 3px solid black;
   //box-shadow: 0px 0px 5px black;
   display: relative;
-  margin-right: 15px;
-  margin-left: 15px;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin: 0;
   background-image: linear-gradient(
     0deg,
     rgba(255, 0, 0, 0) 85%,
     92%,
-    rgb(218, 194, 245)
+    rgb(241, 229, 253)
   );
 }
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
@@ -566,7 +674,7 @@ li {
 #hotlines,
 #facts {
   background-color: $purple;
-  margin-top: -20px;
+  margin-top: -22px;
   padding: 20px;
   margin-left: 60px;
   margin-right: 60px;
@@ -593,7 +701,6 @@ li {
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 10px;
-    border-radius: 6px;
     //border: 1.5px solid $purple;
     //border: 2px solid black;
     &:hover {
@@ -606,7 +713,8 @@ li {
       //Need to make bottom touch line
       color: $white;
       background-color: $purple;
-      border-radius: 6px;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
       //   padding-left: 15px;
       //   padding-right: 15px;
     }
@@ -640,28 +748,28 @@ li {
   //display: flex;
   margin-top: 30px;
   flex: right;
-  //margin-left: 200px;
+  margin-left: 200px;
   height: 30px;
-  width: 230px;
+  width: 330px;
   outline: 0;
   text-align: left;
   padding-left: 30px;
   background-color: #e0e0e0f3;
 }
-.fa-search{
+.fa-search {
   position: absolute;
-  margin-top: 35px;
-  margin-left: 10px;
+  margin-top: 36px;
+  margin-left: 210px;
 }
-.fa-times-circle{
+.fa-times-circle {
   position: absolute;
-  margin-left: 230px;
-  margin-top:37px;
+  margin-left: 535px;
+  margin-top: 37px;
 }
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: grey;
-  font-size: 17px;
+  font-size: 16px;
   padding-left: 3px;
 }
 .search:hover,
@@ -670,21 +778,18 @@ li {
   background-color: rgb(240, 240, 245);
   transition-duration: 420ms;
 }
-#first
-//#second,
-//#third 
-{
+#first {
   margin-left: 60px;
   color: white;
   text-align: center;
   min-height: 100px;
   border-color: blue;
   border-style: solid;
-  border-width: .5px;
+  border-width: 0.5px;
   //margin-top: 15px;
 }
 #second,
-#third{
+#third {
   margin-left: 160px;
   color: white;
   text-align: center;
@@ -694,6 +799,7 @@ li {
   border-style: solid;
   border-width: 0.2px;
 }
+
 .well-container {
   //background-color: blue;
   display: inline-flex;
@@ -701,18 +807,16 @@ li {
   //grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 .well {
-  //visibility: hidden;
-  //margin-top: 15px;
   border-color: blue;
   border-radius: 5px;
   box-shadow: 4px 5px 5px rgb(175, 174, 174);
   background-color: $purple;
-  margin-top: 40px;
+  margin-top: 20px;
   display: inline-flex;
-  //grid-template-columns: repeat(auto-fit,minmax(150px,1fr) );
-  width: 22%;
-  height: 120px;
+  width: 19.7%;
+  height: 105px;
   margin-bottom: 0;
+  padding-bottom: 13px;
 }
 .search-icon {
   //position: absolute;
@@ -729,39 +833,6 @@ li {
   //visibility: hidden;
 }
 
-#Netflix,
-#StressBall,
-#Arcade,
-#Journal,
-#Exercise,
-#Cooking,
-#HealthCare,
-#HealthCare2,
-#Research,
-#Research2,
-#Crowdfunding,
-#Crowdfunding2,
-#Hotlines,
-#Hotlines2,
-#Facts,
-#Facts2 {
-  width: 30%;
-  margin-bottom: 80px;
-  margin-top: 20px;
-  border-radius: 5px;
-}
-
-#StressBall,
-#Arcade,
-#Exercise,
-#Cooking,
-#HealthCare2,
-#Research2,
-#Crowdfunding2,
-#Hotlines2,
-#Facts2 {
-  margin-left: 60px;
-}
 @media screen and (max-width: 767px) {
   .sidenav {
     height: auto;
@@ -776,13 +847,13 @@ li {
 
 <script>
 import Tab from "@/components/Tab";
-import Header from "@/components/Header.vue"
+import Header from "@/components/Header.vue";
 //import Tabs from "@/components/Tabs";
 export default {
   name: "App",
   components: {
     Tab,
-    Header
+    Header,
     //Tabs,
   },
   data: () => {
